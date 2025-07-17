@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pajak Online Jakarta: Mudah, Cepat, Terpercaya</title>
+    <meta
+      name="description"
+      content="Portal Resmi Pembayaran dan Pelaporan Pajak Daerah DKI Jakarta. Urus pajak Anda lebih mudah dan cepat."
+    />
+
+    <link
+      rel="shortcut icon"
+      href="https://pajakonline.jakarta.go.id/images/icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="https://pajakonline.jakarta.go.id/template/multi/images/ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="https://pajakonline.jakarta.go.id/template/multi/images/ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="https://pajakonline.jakarta.go.id/template/multi/images/ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://pajakonline.jakarta.go.id/template/multi/images/ico/apple-touch-icon-57-precomposed.png"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Leaflet CSS for Map -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+
+    <style>
+      /* Custom styles to override or add specific fonts/transitions */
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300,400,700&display=swap");
+      .hero-section {
+        background: url("https://pajakonline.jakarta.go.id/assets/CAROUSEL%20pajakonline%20coloring1.jpg")
+          no-repeat center center/cover;
+      }
+      .footer {
+        background: url("https://pajakonline.jakarta.go.id/assets/footer_bg.jpg")
+          no-repeat center center/cover;
+      }
+    </style>
+  </head>
+
+  <body class="font-roboto text-gray-800 leading-relaxed pt-20">
+    <!-- Header -->
+    <header
+      class="fixed w-full top-0 left-0 bg-white shadow-md z-50 py-3 px-4 flex justify-between items-center"
+    >
+      <div class="flex items-center">
+        <a href="#home" class="flex items-center text-blue-700 font-bold text-2xl">
+          <img
+            src="https://pajakonline.jakarta.go.id/assets/LOGO%20BAPENDA-01.png"
+            alt="Logo Bapenda"
+            class="h-16 mr-3 w-auto"
+          />
+        </a>
+      </div>
+
+      <!-- Main Navigation -->
+      <nav id="main-nav" class="hidden lg:flex md:items-center md:flex-grow flex-col md:flex-row">
+        <ul class="flex flex-col md:flex-row md:mx-auto text-center items-center">
+          <li class="mb-2 md:mb-0 md:mr-6">
+            <a href="#home" class="text-gray-700 hover:text-blue-500 font-medium text-lg py-2 block">
+              Beranda
+            </a>
+          </li>
+          <li class="mb-2 md:mb-0 md:mr-6">
+            <a href="#services" class="text-gray-700 hover:text-blue-500 font-medium text-lg py-2 block">
+              Layanan Pajak
+            </a>
+          </li>
+          <li class="mb-2 md:mb-0 md:mr-6">
+            <a href="#how-to" class="text-gray-700 hover:text-blue-500 font-medium text-lg py-2 block">
+              Informasi & Panduan
+            </a>
+          </li>
+          <li class="mb-2 md:mb-0 md:mr-6">
+            <a href="#contact" class="text-gray-700 hover:text-blue-500 font-medium text-lg py-2 block">
+              Hubungi Kami
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- CTA Buttons (Always visible, but layout changes) -->
+      <div class="flex items-center">
+        <a
+          href="https://pajakonline.jakarta.go.id/login"
+          class="px-6 py-2 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mr-2"
+        >
+          MASUK
+        </a>
+        <a
+          href="https://pajakonline.jakarta.go.id/register"
+          class="px-6 py-2 rounded-md border border-blue-500 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-300"
+        >
+          DAFTAR
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white text-center py-20 lg:py-40 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black bg-opacity-50 z-0"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-5 drop-shadow-lg">
+          Urus Pajak Daerah Anda Lebih Mudah dan Cepat
+        </h1>
+        <p class="text-lg md:text-xl mb-10 drop-shadow-md">
+          Portal Resmi Pembayaran dan Pelaporan Pajak DKI Jakarta.
+        </p>
+
+        <div
+          class="flex flex-wrap justify-center gap-8 mt-12 px-4 md:px-0"
+        >
+          <div class="flex flex-col items-center p-4">
+            <i class="fa fa-mobile text-5xl mb-3 text-blue-300"></i>
+            <h3 class="text-lg font-semibold">Akses Mudah Mobile</h3>
+          </div>
+          <div class="flex flex-col items-center p-4">
+            <i class="fa fa-lock text-5xl mb-3 text-blue-300"></i>
+            <h3 class="text-lg font-semibold">Transaksi Aman Terenkripsi</h3>
+          </div>
+          <div class="flex flex-col items-center p-4">
+            <i class="fa fa-clock-o text-5xl mb-3 text-blue-300"></i>
+            <h3 class="text-lg font-semibold">Layanan 24/7 Nonstop</h3>
+          </div>
+          <div class="flex flex-col items-center p-4">
+            <i class="fa fa-file-text-o text-5xl mb-3 text-blue-300"></i>
+            <h3 class="text-lg font-semibold">Digitalisasi Dokumen Pajak</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Cards Section -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">
+          Layanan Pajak Unggulan Kami
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Temukan kemudahan dalam mengelola kewajiban pajak Anda.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
+        >
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-home text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Bayar Pajak Bumi dan Bangunan (PBB)
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Lunasi tagihan PBB Anda tanpa antre, kapan saja dan di mana saja.
+              </p>
+            </div>
+            <a
+              href="https://pajakonline.jakarta.go.id/login"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Bayar PBB Sekarang
+            </a>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-car text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Bayar Pajak Kendaraan Bermotor (PKB)
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Perpanjang STNK dan bayar pajak kendaraan Anda dengan cepat.
+              </p>
+            </div>
+            <a
+              href="https://pajakonline.jakarta.go.id/login"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Bayar PKB Sekarang
+            </a>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-file-pdf-o text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Cek & Unduh e-SPPT PBB
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Dapatkan salinan digital SPPT PBB Anda secara instan.
+              </p>
+            </div>
+            <a
+              href="https://pajakonline.jakarta.go.id/esppt"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Cek e-SPPT
+            </a>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-building-o text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Lapor & Bayar Pajak Masa
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Pelaporan dan pembayaran pajak hotel, restoran, hiburan, dan
+                lainnya.
+              </p>
+            </div>
+            <a
+              href="https://pajakonline.jakarta.go.id/login"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Lapor Pajak Usaha
+            </a>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-usd text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Validasi & Bayar e-BPHTB
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Proses Bea Perolehan Hak atas Tanah dan Bangunan secara online.
+              </p>
+            </div>
+            <a
+              href="https://ebphtb.jakarta.go.id"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Akses e-BPHTB
+            </a>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <i class="fa fa-bullhorn text-6xl text-blue-500 mb-5"></i>
+              <h3 class="text-2xl font-semibold mb-3 text-gray-900">
+                Pendaftaran & Perpanjangan Pajak Reklame
+              </h3>
+              <p class="text-gray-600 mb-6">
+                Daftarkan objek pajak reklame dan perpanjang izinnya dengan mudah.
+              </p>
+            </div>
+            <a
+              href="https://pajakonline.jakarta.go.id/login"
+              class="inline-block px-8 py-3 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300 mt-auto"
+            >
+              Urus Reklame
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How-To Guide Section -->
+    <section id="how-to" class="py-20 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">
+          3 Langkah Mudah Menggunakan Pajak Online
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Panduan interaktif untuk memulai transaksi pajak Anda.
+        </p>
+        <div class="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+            <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                <i class="fa fa-user-plus text-5xl text-teal-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                    Langkah 1: Daftar / Masuk Akun
+                </h3>
+                <p class="text-gray-600">
+                    Registrasi akun baru atau masuk menggunakan NIK/NPWP Anda.
+                </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                <i class="fa fa-list-alt text-5xl text-teal-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                    Langkah 2: Pilih & Lengkapi Layanan
+                </h3>
+                <p class="text-gray-600">
+                    Pilih jenis pajak yang ingin diurus, lalu lengkapi data sesuai
+                    instruksi.
+                </p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                <i class="fa fa-check-circle text-5xl text-teal-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                    Langkah 3: Selesaikan Transaksi
+                </h3>
+                <p class="text-gray-600">
+                    Lakukan pembayaran atau pelaporan dan dapatkan bukti digital Anda.
+                </p>
+            </div>
+        </div>
+        <a
+          href="https://pajakonline.jakarta.go.id/faq"
+          class="inline-block px-8 py-3 rounded-md border border-blue-500 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-300 mt-12"
+        >
+          Pelajari Panduan Lengkap
+        </a>
+      </div>
+    </section>
+
+    <!-- Payment Channels Section -->
+    <section id="payment-channels" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">
+          Berbagai Kanal Pembayaran yang Terintegrasi
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Kami bekerja sama dengan bank terkemuka untuk kemudahan transaksi
+          Anda.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <!-- Channel Card: ATM -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <button
+              class="accordion-header w-full flex justify-between items-center text-xl font-semibold text-gray-900 pb-4 border-b-2 border-gray-200 mb-4 focus:outline-none md:pointer-events-none"
+            >
+              <h3>ATM</h3>
+              <i class="fa fa-chevron-down md:hidden transform transition-transform duration-300"></i>
+            </button>
+            <ul class="accordion-content list-none p-0 text-left hidden md:block">
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                Mandiri
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BCA
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BNI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank DKI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                Danamon
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                CIMB
+                Niaga
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Maybank
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BTN
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BSI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                OCBC
+              </li>
+            </ul>
+          </div>
+
+          <!-- Channel Card: Teller Bank & Kantor Pos -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <button
+              class="accordion-header w-full flex justify-between items-center text-xl font-semibold text-gray-900 pb-4 border-b-2 border-gray-200 mb-4 focus:outline-none md:pointer-events-none"
+            >
+              <h3>Teller Bank & Kantor Pos</h3>
+              <i class="fa fa-chevron-down md:hidden transform transition-transform duration-300"></i>
+            </button>
+            <ul class="accordion-content list-none p-0 text-left hidden md:block">
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-times-circle text-red-500 mr-2"></i> BCA
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BJB
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                Mandiri
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank DKI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Kantor
+                Pos
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BRI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BTN
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                Bukopin
+              </li>
+            </ul>
+          </div>
+
+          <!-- Channel Card: eBanking / Mobile Banking -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <button
+              class="accordion-header w-full flex justify-between items-center text-xl font-semibold text-gray-900 pb-4 border-b-2 border-gray-200 mb-4 focus:outline-none md:pointer-events-none"
+            >
+              <h3>eBanking / Mobile Banking</h3>
+              <i class="fa fa-chevron-down md:hidden transform transition-transform duration-300"></i>
+            </button>
+            <ul class="accordion-content list-none p-0 text-left hidden md:block">
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BRI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BCA
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                Mandiri
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank
+                OCBC
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank DKI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                BSI
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                CIMB
+                Niaga
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Maybank
+              </li>
+              <li class="mb-2 text-gray-700 flex items-center">
+                <i class="fa fa-check-circle text-green-500 mr-2"></i>
+                Bank UOB
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 mt-12">
+          <div class="p-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Bank_Mandiri_logo_2016.svg"
+              alt="Bank Mandiri"
+              class="h-12 md:h-16 grayscale hover:grayscale-0 transition-filter duration-300"
+            />
+          </div>
+          <div class="p-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/1200px-Bank_Central_Asia.svg.png"
+              alt="BCA"
+              class="h-12 md:h-16 grayscale hover:grayscale-0 transition-filter duration-300"
+            />
+          </div>
+          <div class="p-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/27/BankNegaraIndonesia46-logo.svg"
+              alt="BNI"
+              class="h-12 md:h-16 grayscale hover:grayscale-0 transition-filter duration-300"
+            />
+          </div>
+          <div class="p-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/67/Bank_Jakarta.png"
+              alt="Bank DKI"
+              class="h-12 md:h-16 grayscale hover:grayscale-0 transition-filter duration-300"
+            />
+          </div>
+          <div class="p-2">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_2020.svg"
+              alt="BRI"
+              class="h-12 md:h-16 grayscale hover:grayscale-0 transition-filter duration-300"
+            />
+          </div>
+        </div>
+        <a
+          href="#"
+          class="inline-block px-8 py-3 rounded-md border border-blue-500 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-300 mt-12"
+        >
+          Lihat Detail Kanal Pembayaran
+        </a>
+      </div>
+    </section>
+
+    <!-- News & Announcements Section -->
+    <section id="news" class="py-20 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">
+          Info Terbaru Pajak DKI Jakarta
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Jangan lewatkan informasi penting seputar pajak dan program terkini.
+        </p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden text-left transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            <img
+              src="https://pajakonline.jakarta.go.id/assets/CAROUSEL%20pajakonline%20coloring1.jpg"
+              alt="Berita 1"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Tenggat Waktu Pembayaran PBB Diperpanjang!
+              </h3>
+              <span class="block text-sm text-gray-500 mb-3">15 Juli 2025</span>
+              <p class="text-gray-600 mb-5">
+                Pemerintah Provinsi DKI Jakarta memperpanjang tenggat pembayaran
+                Pajak Bumi dan Bangunan (PBB) hingga akhir bulan ini...
+              </p>
+              <a
+                href="#"
+                class="inline-block px-5 py-2 text-sm rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden text-left transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            <img
+              src="https://pajakonline.jakarta.go.id/assets/CAROUSEL%20eSPPT%20coloring1.jpg"
+              alt="Berita 2"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Sosialisasi e-BPHTB Terbaru untuk PPAT
+              </h3>
+              <span class="block text-sm text-gray-500 mb-3">10 Juli 2025</span>
+              <p class="text-gray-600 mb-5">
+                Bapenda DKI Jakarta mengadakan sosialisasi mengenai fitur
+                terbaru e-BPHTB khusus untuk Pejabat Pembuat Akta Tanah...
+              </p>
+              <a
+                href="#"
+                class="inline-block px-5 py-2 text-sm rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-lg shadow-lg overflow-hidden text-left transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+          >
+            <img
+              src="https://pajakonline.jakarta.go.id/assets/CAROUSEL%20eBPHTB%20fix2.jpg"
+              alt="Berita 3"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">
+                Program Keringanan Pajak Kendaraan Bermotor Dimulai
+              </h3>
+              <span class="block text-sm text-gray-500 mb-3">01 Juli 2025</span>
+              <p class="text-gray-600 mb-5">
+                Manfaatkan program keringanan pajak kendaraan bermotor tahun
+                ini. Dapatkan diskon menarik untuk PKB Anda...
+              </p>
+              <a
+                href="#"
+                class="inline-block px-5 py-2 text-sm rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 transition-colors duration-300"
+                >Baca Selengkapnya</a
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="inline-block px-8 py-3 rounded-md border border-blue-500 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-300 mt-12"
+        >
+          Lihat Semua Pengumuman
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-20 bg-blue-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">
+          Kami Siap Membantu Anda
+        </h2>
+        <p class="text-lg text-gray-600 mb-12">
+          Temukan kantor layanan terdekat atau hubungi kami melalui berbagai
+          kanal.
+        </p>
+        <div class="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
+          <!-- Contact Info -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-8 text-left md:mb-0 mb-8 flex flex-col items-start"
+          >
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">
+              Kontak Penting
+            </h3>
+            <!-- Grid for labels and values on desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-x-4 gap-y-4 w-full">
+              <div class="flex items-center">
+                <i class="fa fa-phone text-blue-500 mr-3 text-xl w-6 text-center"></i>
+                <strong class="text-lg text-gray-700">Call Center:</strong>
+              </div>
+              <div class="flex items-center">
+                <a href="tel:1500177" class="text-lg text-blue-600 hover:underline">1500-177</a>
+              </div>
+
+              <div class="flex items-start">
+                <i class="fa fa-whatsapp text-blue-500 mr-3 text-xl w-6 text-center"></i>
+                <strong class="text-lg text-gray-700">WhatsApp Official:</strong>
+              </div>
+              <div class="flex items-start">
+                <span class="text-lg text-gray-700">Hubungi Kantor Terdekat Anda (Lihat Peta)</span>
+              </div>
+
+              <div class="flex items-center">
+                <i class="fa fa-envelope text-blue-500 mr-3 text-xl w-6 text-center"></i>
+                <strong class="text-lg text-gray-700">Email Dukungan:</strong>
+              </div>
+              <div class="flex items-center">
+                <a href="mailto:pajakdki@jakarta.go.id" class="text-lg text-blue-600 hover:underline">pajakdki@jakarta.go.id</a>
+              </div>
+
+              <div class="flex items-center">
+                <i class="fa fa-clock-o text-blue-500 mr-3 text-xl w-6 text-center"></i>
+                <strong class="text-lg text-gray-700">Jam Operasional:</strong>
+              </div>
+              <div class="flex items-center">
+                <span class="text-lg text-gray-700">Senin - Jumat, 08:00 - 16:00 WIB</span>
+              </div>
+            </div>
+            
+            <div class="w-full text-center mt-8">
+              <a
+                href="https://bapenda.jakarta.go.id/lokasi-unit-pelayanan/"
+                target="_blank"
+                class="inline-block px-8 py-3 rounded-md border border-blue-500 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-colors duration-300"
+              >
+                Lihat Daftar Lengkap Kantor
+              </a>
+            </div>
+          </div>
+
+          <!-- Map Section -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 relative flex flex-col justify-between"
+          >
+            <button
+              class="accordion-header-map w-full flex justify-between items-center text-xl font-semibold text-gray-900 pb-4 border-b-2 border-gray-200 mb-4 focus:outline-none md:hidden"
+            >
+              <h3>Peta Lokasi Kantor</h3>
+              <i class="fa fa-chevron-down transform transition-transform duration-300"></i>
+            </button>
+            <div id="map-container" class="hidden md:block accordion-content-map flex-grow">
+              <div id="map" class="w-full h-full min-h-[300px] md:min-h-0 md:h-[400px] rounded-md z-10"></div>
+              <p class="text-sm text-gray-500 mt-2 text-center">
+                (Scroll untuk zoom, klik ikon untuk detail kantor)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white py-12 relative overflow-hidden">
+      <div class="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+      <div class="container mx-auto px-4 text-center relative z-10">
+        <div class="mb-6">
+          <img
+            src="https://pajakonline.jakarta.go.id/assets/bprd_logo_white.png"
+            alt="Bapenda Logo White"
+            class="h-24 mx-auto"
+          />
+        </div>
+        <p class="text-gray-300 mb-4 text-lg">
+          &copy; Badan Pendapatan Daerah.<br />
+          Gedung Dinas Teknis Jl. Abdul Muis No.66<br />
+          Jakarta Pusat - Daerah Khusus Ibukota Jakarta 10110
+        </p>
+        <div class="flex justify-center space-x-6 mb-6">
+          <a
+            href="https://www.facebook.com/Humaspajakjakarta"
+            target="_blank"
+            class="text-white hover:text-blue-400 transition-colors duration-300"
+            ><i class="fa fa-facebook-square text-3xl"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/humaspajakjakarta"
+            target="_blank"
+            class="text-white hover:text-blue-400 transition-colors duration-300"
+            ><i class="fa fa-instagram text-3xl"></i
+          ></a>
+          <a
+            href="https://twitter.com/humaspajakjkt"
+            target="_blank"
+            class="text-white hover:text-blue-400 transition-colors duration-300"
+            ><i class="fa fa-twitter-square text-3xl"></i
+          ></a>
+        </div>
+        <div class="flex flex-wrap justify-center space-x-4 text-sm">
+          <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Kebijakan Privasi</a>
+          <span class="text-gray-400">|</span>
+          <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Syarat & Ketentuan</a>
+          <span class="text-gray-400">|</span>
+          <a href="#" class="text-gray-300 hover:text-white transition-colors duration-300">Peta Situs</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      // Accordion for Payment Channels and Map on Mobile
+      document.querySelectorAll(".accordion-header").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            // Only activate on mobile
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("i");
+
+            content.classList.toggle("hidden");
+            icon.classList.toggle("fa-chevron-down");
+            icon.classList.toggle("fa-chevron-up");
+          }
+        });
+      });
+
+      document.querySelectorAll(".accordion-header-map").forEach((button) => {
+        button.addEventListener("click", () => {
+          if (window.innerWidth < 768) {
+            // Only activate on mobile
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("i");
+
+            content.classList.toggle("hidden");
+            icon.classList.toggle("fa-chevron-down");
+            icon.classList.toggle("fa-chevron-up");
+
+            // Invalidate map size after showing it to ensure it renders correctly
+            if (!content.classList.contains('hidden') && map) {
+              setTimeout(() => {
+                map.invalidateSize();
+              }, 0);
+            }
+          }
+        });
+      });
+
+
+      // Initialize Leaflet Map
+      var map = L.map("map").setView([-6.221537, 106.848369], 12); // Coords untuk Jakarta
+
+      map.scrollWheelZoom.disable(); // Disable scroll zoom, user can use zoom controls
+
+      // Add a tile layer to the map
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      // Custom icon for markers
+      var LeafIcon = L.Icon.extend({
+        options: {
+          iconSize: [48, 68], // size of the icon
+          popupAnchor: [0, -40], // point from which the popup should open relative to the iconAnchor
+        },
+      });
+
+      var bprdIcon = new LeafIcon({
+        iconUrl: "https://pajakonline.jakarta.go.id/assets/map-marker.png",
+      }); // Reusing existing marker icon
+
+      // Data Lokasi Kantor
+      var officeLocations = [
+        {
+          lat: -6.120292,
+          lng: 106.892475,
+          name: "Suku Badan Pendapatan Daerah Jakarta Utara dan Kabupaten Kepulauan Seribu",
+          address:
+            "Kantor Walikota Administrasi Jakarta Utara, Lt. Dasar Gedung R. Jl. Laksamana Yos Sudarso No.27-29 Tanjung Priok Jakarta Utara",
+          email: "bapenda.subanutara@jakarta.go.id",
+          telp: "(021) 435-8788",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.1780502,
+          lng: 106.8185564,
+          name: "Pusat Data dan Informasi Pendapatan",
+          address:
+            "Gedung Dinas Teknis Abdul Muis, Lantai 2, Jl. Abdul Muis No. 66, Gambir, Jakarta Pusat",
+          email: "pajakdki@jakarta.go.id",
+          telp: "(021) 3865630",
+          wa: null,
+        },
+        {
+          lat: -6.185990114951842,
+          lng: 106.73765480518342,
+          name: "Suku Badan Pendapatan Daerah Jakarta Barat",
+          address:
+            "Kantor Walikota Jakarta Barat, Gedung B Lantai 15, Jl Raya Kembangan No. 2 Jakarta Barat",
+          email: "bapenda.subanbarat@jakarta.go.id",
+          telp: "(021) 58357709",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.186533,
+          lng: 106.737795,
+          name: "UPPPD Kembangan",
+          address:
+            "Kantor Walikota Administrasi Jakarta Barat Blok B Lt. 12, Jl. Kembangan Raya No. 2, Kembangan, Jakarta Barat 11610",
+          email: "upppd.kembangan@jakarta.go.id",
+          telp: "(021) 58357695",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.143424272808823,
+          lng: 106.7912882566452,
+          name: "UPPPD Tambora",
+          address:
+            "Kantor Kecamatan Tambora, Jl. P. Tubagus Angke Jembatan Dua, Tambora, Jakarta Barat 11330",
+          email: "upppd.tambora@jakarta.go.id",
+          telp: "(021) 630603",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.171728991769834,
+          lng: 106.90266430377962,
+          name: "UPPPD Kelapa Gading",
+          address:
+            "Jl. Gading Putih Raya No.1 (samping Klinik Medikarya/depan Pasar Mandiri), Kelapa Gading Timur, Jakarta Utara",
+          email: "upppd.kelapagading@jakarta.go.id",
+          telp: "(021) 29745005",
+          wa: "6281385648787",
+        },
+        {
+          lat: -6.130106566461209,
+          lng: 106.91771729311252,
+          name: "UPPPD Koja",
+          address: "Jl. Plumpang Semper No.41, Koja, Jakarta Utara",
+          email: "upppd.koja@jakarta.go.id",
+          telp: "(021) 22430174",
+          wa: "081213331953",
+        },
+        {
+          lat: -6.139138,
+          lng: 106.871804,
+          name: "UPPPD Tanjung Priok",
+          address:
+            "Jl. Sunter Karya Utara Blok G No. 1, Tanjung Priok, Jakarta Utara 14350",
+          email: "upppd.tanjungpriok@jakarta.go.id",
+          telp: "(021) 65830912",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.342937853297235,
+          lng: 106.90952463359211,
+          name: "UPPPD Cipayung",
+          address:
+            "Kantor UPPPD Cipayung Jl. Raya Cilangkap No. 1 RT. 03 RW. 06 Kel. Cilangkap Kec. Cipayung Jakarta Timur 13840",
+          email: "upppd.cipayung@jakarta.go.id",
+          telp: "(021) 84309685",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.304902,
+          lng: 106.877386,
+          name: "UPPPD Ciracas",
+          address:
+            "Kantor UPPPD Ciracas, Jl. Kampung Jati RT. 006 RW. 003 Kel. Rambutan Kec. Ciracas Jakarta Timur 13830",
+          email: "upppd.ciracas@jakarta.go.id",
+          telp: "(021) 22819493",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.184054434966192,
+          lng: 106.8662530877654,
+          name: "UPPPD Cempaka Putih",
+          address:
+            "Jl. Cempaka Putih Barat No.19, RT003/007, Kel. Cempaka Putih bar, Kec. Cempaka Putih, Jakarta Pusat",
+          email: "upppd.cempakaputih@jakarta.go.id",
+          telp: "(021) 42886176",
+          wa: "6285691855434",
+        },
+        {
+          lat: -6.146075070789288,
+          lng: 106.72906100749971,
+          name: "UPPPD Cengkareng",
+          address:
+            "Jl. Lingkar Luar Barat No.11, Cengkareng Timur, Kecamatan Cengkareng, Jakarta Barat 11730",
+          email: "upppd.cengkareng@jakarta.go.id",
+          telp: "02122052776",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.191849,
+          lng: 106.794536,
+          name: "UPPPD Palmerah",
+          address:
+            "Jl. Anggrek Rosliana Blok E No.31 Rt.005 Rw.002 Jl. Kemanggisan Palmerah, Jakarta Barat 11480",
+          email: "upppd.palmerah@jakarta.go.id",
+          telp: "(021) 22055966",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.137423926819602,
+          lng: 106.83327555656435,
+          name: "UPPPD Pademangan",
+          address:
+            "Kantor Bersama Samsat Utara Pusat, lantai 7, Jl. Gunung Sahari No.13, Pademangan, Jakarta Utara 14420",
+          email: "upppd.pademangan@jakarta.go.id",
+          telp: "(021) 6404108",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.24040608296259,
+          lng: 106.82703071610797,
+          name: "UPPPD Mampang Prapatan",
+          address:
+            "Ged. Dinas Pariwisata dan Kebudayaan DKI Jakarta Ged. C Lantai 1, Jl. Kuningan Barat Raya No.1 Kelurahan Kuningan Barat",
+          email: "upppd.mampang@jakarta.go.id",
+          telp: "021-27096387 / 021-27095592",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.230853,
+          lng: 106.897574,
+          name: "UPPPD Duren Sawit",
+          address:
+            "Kantor UPPPD Duren Sawit, Jl. Pahlawan Revolusi No. 3 Kel. Pondok Bambu Kec. Duren Sawit, Jakarta Timur 13430",
+          email: "upppd.durensawit@jakarta.go.id",
+          telp: "(021) 22089076",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.229621,
+          lng: 106.877347,
+          name: "UPPPD Jatinegara",
+          address:
+            "Jl. DI. Panjaitan, Kav. 55, Kel. Kebon Nanas, Kec. Jatinegara, Jakarta Timur",
+          email: "upppd.jatinegara@jakarta.go.id",
+          telp: "(021) 85904454",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.178126799999999,
+          lng: 106.8186698,
+          name: "UPPPD Gambir",
+          address:
+            "Gedung Dinas Teknis Abdul Muis Lt. 9, Jl. Abdul Muis No. 66, Gambir, Jakarta Pusat 10160",
+          email: "upppd.gambir@jakarta.go.id",
+          telp: "(021) 3865580-85 ext. 4911/4963",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.184054434966192,
+          lng: 106.8662530877654,
+          name: "UPPPD Kemayoran",
+          address:
+            "Gedung UPPPD Cempaka Putih dan Kemayoran Jl. Cempaka Putih Barat Blok E No.2, Kec. Cempaka Putih, Jakarta Pusat",
+          telp: "-",
+          wa: "682244800100",
+        },
+        {
+          lat: -6.1780987,
+          lng: 106.8186861,
+          name: "UPPPD Menteng",
+          address:
+            "Gedung Dinas Teknis Abdul Muis Lt. 9, Jl. Abdul Muis No. 66, Gambir, Jakarta Pusat",
+          email: "upppd.menteng@jakarta.go.id",
+          telp: "021-3865901",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.2390272,
+          lng: 106.8171264,
+          name: "UPPPD Tanah Abang",
+          address:
+            "Gedung Graha Mental Spiritual Lantai 4, Jl Awaludin II No. 17 A Rt 002/RW 17, Kebon Melati, Tanah Abang, Jakarta Pusat",
+          email: "upppd.tanahabang@jakarta.go.id",
+          telp: "(021) 3925606",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.19856,
+          lng: 106.764015,
+          name: "UPPPD Kebon Jeruk",
+          address:
+            "Jl. Lapangan Bola No.1 Kebon Jeruk Jakarta Barat (Belakang Kantor Kecamatan Kebon Jeruk)",
+          email: "upppd.kebonjeruk@jakarta.go.id",
+          telp: "(021) 5365 5365 / (021) 53655364",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.102348554620544,
+          lng: 106.93966269493104,
+          name: "UPPPD Cilincing",
+          address:
+            "Jl. Sungai Landak No. 7 (sebelah Kantor Kecamatan Cilincing), Cilincing, Jakarta Utara 14120",
+          email: "upppd.cilincing@jakarta.go.id",
+          telp: "(021) 44835663",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.178416785216665,
+          lng: 106.8189059993353,
+          name: "UPPPD Penjaringan",
+          address:
+            "Kantor Kecamatan Penjaringan, Jl. Pluit Raya No.5, Penjaringan, Jakarta Utara 14440",
+          email: "upppd.penjaringan@jakarta.go.id",
+          telp: "(021) 38864158 / (021) 38864169",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.182358204950893,
+          lng: 106.85635328292847,
+          name: "UPPPD Johar Baru",
+          address:
+            "Kantor Kecamatan Johar Baru, Jl. Johar Baru Utara I No. 1, Johar Baru, Jakarta Pusat 10560",
+          email: "upppd.joharbaru@jakarta.go.id",
+          telp: "(021) 42887925",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.184822146615561,
+          lng: 106.84335529804231,
+          name: "UPPPD Senen",
+          address:
+            "Kantor Kecamatan Senen, Jl. Kramat Raya No. 114, Senen, Jakarta Pusat 10450",
+          email: "upppd.senen@jakarta.go.id",
+          telp: "(021) 31923786 / 31923898",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.1544943,
+          lng: 106.7386619,
+          name: "UPPPD Kalideres",
+          address:
+            "Kantor Bersama Samsat Jakarta Barat Lt. 6, Jl. Daan Mogot KM. 13, Cengkareng, Jakarta Barat 11720",
+          email: "upppd.kalideres@jakarta.go.id",
+          telp: "(021) 5442335",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.248022,
+          lng: 106.807424,
+          name: "UPPPD Kebayoran Baru",
+          address:
+            "Kantor Walikota Administrasi Jakarta Selatan Blok A Lt. 10, Jl. Prapanca Raya No. 9, Kebayoran Baru, Jakarta Selatan 12170",
+          telp: "(021) 7206740 / (021) 72792414",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.223145,
+          lng: 106.833818,
+          name: "UPPPD Setiabudi",
+          address:
+            "Kantor UPPRD Setiabudi Mal Pelayanan Publik Lantai 4 JL. Epicentrum Selatan RT. 002/005 Kel. Karet Kuningan, Kec. Setiabudi Jakarta Selatan",
+          telp: "-",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.231644,
+          lng: 106.846081,
+          name: "UPPPD Tebet",
+          address:
+            "Kantor Kecamatan Tebet Lt. 3, Jl. Prof. DR. Soepomo No.55C, Tebet, Jakarta Selatan 12810",
+          email: "upppd.tebet@jakarta.go.id",
+          telp: "(021) 83780019",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.20547187256084,
+          lng: 106.93107426166536,
+          name: "UPPPD Cakung",
+          address:
+            "Kantor UPPPD Cakung, Jl. Raya Penggilingan, Komplek PIK (depan Masjid Attaqwa/samping SMPN 236), Penggilingan, Jakarta Timur",
+          email: "upppd.cakung@jakarta.go.id",
+          telp: "(021) 22861625",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.229621,
+          lng: 106.877347,
+          name: "UPPPD Makasar",
+          address:
+            "Jl. DI. Panjaitan, Kav. 55, Kel. Kebon Nanas, Kec. Jatinegara, Jakarta Timur",
+          email: "upppd.makasar@jakarta.go.id",
+          telp: "(021) 8568043",
+          wa: "6281260006177",
+        },
+        {
+          lat: -5.7467372,
+          lng: 106.6131493,
+          name: "UPPPD Kepulauan Seribu",
+          address:
+            "Kantor Bupati Kabupaten Administrasi Kepulauan Seribu, Jl. Ikan Baracuda No. 14 Pulau Pramuka 14530",
+          telp: "(021) 70760947 fax: 021-70617522",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.229592415469138,
+          lng: 106.87700629234315,
+          name: "Samsat Jakarta Timur",
+          address:
+            "Kantor Bersama Samsat Jakarta Timur, Jl. D.I. Panjaitan Kav. 55, Jatinegara, Jakarta Timur 13410",
+          telp: "(021) 8199849-52, 8199854",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.176395631964643,
+          lng: 106.79744124412538,
+          name: "UPPPD Grogol Petamburan",
+          address:
+            "Jl. Gelong Baru, Tomang, Grogol Petamburan, Jakarta Barat 11440",
+          email: "upppd.gropet@jakarta.go.id",
+          telp: "(021) 29332807",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.324939508645871,
+          lng: 106.8344661447047,
+          name: "UPPPD Jagakarsa",
+          address:
+            "Jl. Raya Lenteng Agung No. 232 Lenteng Agung, Kec. Jagakarsa, Jakarta Selatan 12610",
+          email: "upppd.jagakarsa@jakarta.go.id",
+          telp: "(021) 7271665",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.248735,
+          lng: 106.860069,
+          name: "UPPPD Pancoran",
+          address:
+            "Kawasan Kantor Kecamatan Pancoran, Jl. Pengadegan Timur II No. 2, Pancoran, Jakarta Selatan 12770",
+          email: "upppd.pancoran@jakarta.go.id",
+          telp: "(021) 27532042",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.288444,
+          lng: 106.808008,
+          name: "UPPPD Cilandak",
+          address:
+            "Jl. Pangeran Antasari No.55.A Cilandak Barat, Cilandak, Jakarta Selatan",
+          email: "upppd.cilandak@jakarta.go.id",
+          telp: "(021) 22769765",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.227212041388463,
+          lng: 106.87680686458317,
+          name: "UPPPD Matraman",
+          address:
+            "Jl. D I Panjaitan Kav.55 Kebon Nanas, Jatinegara, Jakarta Timur",
+          email: "upppd.matraman@jakarta.go.id",
+          telp: "(021) 85914852",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.2390272,
+          lng: 106.8171264,
+          name: "UPPPD Pasar Rebo",
+          address:
+            "Jalan Raya Pondok Gede No. 1 Kel. Dukuh Kec. Kramat Jati, Jakarta Timur",
+          email: "upppd.pasarrebo@jakarta.go.id",
+          telp: "021- 48672073",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.22963,
+          lng: 106.877344,
+          name: "Suku Badan Pendapatan Daerah Jakarta Timur",
+          address:
+            "Kantor Bersama Samsat Jakarta Timur, Lantai 4, Jl. D.I. Panjaitan Kav. 55, Jatinegara, Jakarta Timur 13410",
+          email: "bapenda.subantimur@jakarta.go.id",
+          telp: "(021) 8199831",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.137391924793119,
+          lng: 106.83327555656435,
+          name: "Samsat Jakarta Pusat",
+          address:
+            "Kantor Bersama Samsat Jakarta Utara Pusat, Jl. Gunung Sahari No. 13, Pademangan, Jakarta Utara 14420",
+          telp: "(021) 64715202, 6405826 Fax: (021) 6405826",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.137397258464328,
+          lng: 106.83327555656435,
+          name: "Samsat Jakarta Utara",
+          address:
+            "Kantor Bersama Samsat Jakarta Utara Pusat, Jl. Gunung Sahari No. 13, Pademangan, Jakarta Utara 14420",
+          telp: "(021) 6404304",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.150276,
+          lng: 106.835816,
+          name: "UPPPD Sawah Besar",
+          address:
+            "Gedung Dinas Teknis Kelautan dan Pertanian Lt. 2, Jl. Gunung Sahari Raya no. 11 Sawah Besar",
+          email: "upppd.sawahbesar@jakarta.go.id",
+          telp: "(021) 62305618 / (021) 62305619",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.137518160944152,
+          lng: 106.8327920934154,
+          name: "UPPPD Taman Sari",
+          address:
+            "Alamat Sementara UPPPD taman sari di Gedung Arsip Kantor Samsat Jakarta Pusat Utara Jl Gunung Sahari No.13",
+          email: "upppd.tamansari@jakarta.go.id",
+          telp: "(021) 6908641/ (021) 6916907",
+          wa: "6289689921060",
+        },
+        {
+          lat: -6.137323,
+          lng: 106.833297,
+          name: "UPPPD Kepulauan Seribu",
+          address:
+            "Kantor Bersama Samsat Jakarta Utara-Pusat, lantai 6, Jl. Gunung Sahari No. 13, Pademangan, Jakarta Utara 14420",
+          email: "upppd.kepseribu@jakarta.go.id",
+          telp: "(021) 6405256 / 6405616",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.223448,
+          lng: 106.814274,
+          name: "Samsat Jakarta Selatan",
+          address:
+            "Komplek Gedung Polda Metro Jaya, Jl. Jendral Gatot Subroto, Kebayoran Baru, Jakarta Selatan 12110",
+          telp: "(021) 5737219 Fax: (021) 5255382",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.2390272,
+          lng: 106.8171264,
+          name: "UPPPD Kramat Jati",
+          address:
+            "Jalan Raya Pondok Gede No. 1 Kel. Dukuh Kec. Kramat Jati, Jakarta Timur",
+          email: "upppd.kramatjati@jakarta.go.id",
+          telp: "021- 48672073",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.324933774361102,
+          lng: 106.83444883649732,
+          name: "UPPPD Pasar Minggu",
+          address:
+            "Jl. Raya Lenteng Agung No. 232 Lenteng Agung, Kec. Jagakarsa, Jakarta Selatan 12610",
+          email: "upppd.pasarminggu@jakarta.go.id",
+          telp: "(021) 21789331",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.1780502,
+          lng: 106.8185564,
+          name: "Layanan Informasi Pajak Daerah",
+          address:
+            "Gedung Dinas Teknis Abdul Muis, Lantai 1, Jl. Abdul Muis No. 66, Gambir, Jakarta Pusat",
+          email: "pajakdki@jakarta.go.id",
+          telp: "(021) 3865630",
+          wa: null,
+        },
+        {
+          lat: -6.178179,
+          lng: 106.8186862,
+          name: "Suku Badan Pendapatan Daerah Jakarta Pusat",
+          address:
+            "Gedung Dinas Teknis Abdul Muis, Lantai 2, Jl. Abdul Muis No. 66, Gambir, Jakarta Pusat 10160",
+          email: "bapenda.subanpusat@jakarta.go.id",
+          telp: "(021) 3865612 Fax : (021) 3518893",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.152694007674821,
+          lng: 106.7387330532074,
+          name: "Samsat Jakarta Barat",
+          address:
+            "Kantor Bersama Samsat Jakarta Barat, Jl. Daan Mogot KM. 13, Cengkareng, Jakarta Barat 11720",
+          telp: "(021) 5442283, 5442301, 5442302 Fax: (021) 5442283",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.249504493820022,
+          lng: 106.77841365337373,
+          name: "UPPPD Kebayoran Lama",
+          address:
+            "Kantor Kecamatan Kebayoran Lama Lt. Dasar dan Lt. 3, Jl. Ciputat Raya No. 1, Kebayoran Lama, Jakarta Selatan, 12240",
+          email: "upppd.kebayoranlama@jakarta.go.id",
+          telp: "(021) 7207258, 72072583/7810040",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.203388874515744,
+          lng: 106.8900549360499,
+          name: "UPPPD Pulo Gadung",
+          address:
+            "Jl. Cipinang Baru Raya No.16, RT.11/RW.5, Cipinang, Kec. Pulo Gadung, Kota Jakarta Timur, 13240",
+          email: "upppd.pulogadung@jakarta.go.id",
+          telp: "021- 47884158",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.248099,
+          lng: 106.807589,
+          name: "Suku Badan Pendapatan Daerah Jakarta Selatan",
+          address:
+            "Kantor Walikota Administrasi Jakarta Selatan, Blok B Lantai 5, Jl. Prapanca Raya No. 9, Kebayoran Baru, Jakarta Selatan",
+          email: "bapenda.subanselatan@jakarta.go.id",
+          telp: "(021) 722 6350 â€“ 7206910 Fax: 7206910",
+          wa: "6281260006177",
+        },
+        {
+          lat: -6.236482272143425,
+          lng: 106.75479412078857,
+          name: "UPPPD Pesanggrahan",
+          address:
+            "Gedung Kantor UPPPD Pesanggrahan Jl. Ciledug Raya No. 7 RT 001/04",
+          email: "upppd.pesanggrahan@jakarta.go.id",
+          telp: "(021) 7361311",
+          wa: "6281260006177",
+        },
+      ];
+
+      officeLocations.forEach(function (office) {
+        var popupContent = `<b>${office.name}</b><br>${office.address}<br>`;
+        if (office.telp && office.telp.trim() !== "-") {
+          const cleanTelp = office.telp.replace(/[^\d+]/g, "");
+          popupContent += `Telp: <a href="tel:${cleanTelp}" class="text-blue-600 hover:underline">${office.telp}</a><br>`;
+        }
+        if (office.wa) {
+          popupContent += `WA: <a href="https://wa.me/${office.wa}" target="_blank" class="text-blue-600 hover:underline">${office.wa}</a><br>`;
+        }
+        if (office.email) {
+          popupContent += `Email: <a href="mailto:${office.email}" class="text-blue-600 hover:underline">${office.email}</a>`;
+        }
+
+        L.marker([office.lat, office.lng], { icon: bprdIcon })
+          .bindPopup(popupContent)
+          .addTo(map);
+      });
+
+      // Optional: Adjust map container height on resize for better responsiveness
+      window.addEventListener('resize', function() {
+        if (map) {
+          map.invalidateSize();
+        }
+      });
+    </script>
+  </body>
+</html>
